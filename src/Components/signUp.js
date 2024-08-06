@@ -19,6 +19,7 @@ const SignUp = () => {
             <label htmlFor="ConfirmPassword">Re-Enter Password:</label>
             <input type="password" className="form-control" />
           </div>
+          <a href="/" className="anchor-link">Already have an account?</a>
           <div className="d-flex justify-content-center">
             <button type="submit" className="btn-primary">Sign Up</button>
           </div>

@@ -15,7 +15,9 @@ const LoginForm = ({ onLogin }) => {
   const handleSignUp = () => {
     navigate('/signUpPage');
   };
-
+  const handleLogin = () => {
+    navigate('/home');
+  }
   return (
     <div className="form-container">
       <h1>Login</h1>
@@ -40,8 +42,9 @@ const LoginForm = ({ onLogin }) => {
             className="form-control"
           />
         </div>
+        <a href="#" className="anchor-link">Forgot password?</a>
         <div className="btn-container">
-          <button className="btn-primary" type="submit">Login</button>
+          <button onClick={handleLogin} className="btn-primary" type="submit">Login</button>
           <button onClick={handleSignUp} className="btn-primary">Sign Up</button>
         </div>
       </form>
