@@ -1,11 +1,14 @@
 import React from 'react'
-
-const home = () => {
+import Navbar from './Navbar';
+import CustomerList from './customerList';
+const Home = () => {
   return (
     <div>
-        <h1>Home</h1>
+        <Navbar/>
+        <CustomerList/>
     </div>
+    
   )
 }
 
-export default home
+export default Home;
