@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import logo from './logo.jpeg';
 import { useNavigate } from 'react-router-dom';
+import Tooltip from './tooltip'
 
 const Navbar = () => {
   const navigate = useNavigate(); 
@@ -18,9 +19,15 @@ const Navbar = () => {
         TrustWave
       </a>
       <div className="d-flex align-items-right">
-        <i class="bi bi-bell navbar-notifi-icon "></i>
+      <Tooltip text="Notification">
+        <i class="bi bi-bell navbar-notifi-icon" ></i>
+      </Tooltip>
+      <Tooltip text='My Profile'>
         <i class ='bi bi-person navbar-user-icon'></i>
+      </Tooltip>
+      <Tooltip text='Logout'>                           
         <i className="bi bi-box-arrow-right navbar-logout-icon" onClick={handleLogout}></i>
+      </Tooltip>
       </div>
     </nav>
   );

@@ -16,9 +16,10 @@ const LoginForm = ({ onLogin }) => {
     navigate('/signUpPage');
   };
   const handleLogin = () => {
-    navigate('/home');
+    navigate('/user');
   }
   return (
+    <div className='d-flex justify-content-center mb-2'>
     <div className="form-container">
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
@@ -48,6 +49,7 @@ const LoginForm = ({ onLogin }) => {
           <button onClick={handleSignUp} className="btn-primary">Sign Up</button>
         </div>
       </form>
+    </div>
     </div>
   );
 };

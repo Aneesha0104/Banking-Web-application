@@ -1,11 +1,7 @@
 import React from 'react';
-
+import Pagination from './pagination';
+import customerData from './customerData';
 const CustomerList = () => {
-  const customers = [
-    { id: '001', name: 'Mark', accountNumber: 'xxxxxxx' },
-    { id: '002', name: 'Sara', accountNumber: 'xxxxxxx' },
-    { id: '003', name: 'John', accountNumber: 'xxxxxxx' }
-  ];
 
   const handleEdit = (id) => {
     console.log(`Editing customer with ID: ${id}`);
@@ -33,7 +29,7 @@ const CustomerList = () => {
             </tr>
           </thead>
           <tbody className="table-group-divider">
-            {customers.map((customer) => (
+            {customerData.map((customer) => (
               <tr key={customer.id}>
                 <th scope="row">{customer.id}</th>
                 <td>{customer.name}</td>
@@ -56,6 +52,7 @@ const CustomerList = () => {
             ))}
           </tbody>
         </table>
+        <Pagination/>
       </div>
    
   );

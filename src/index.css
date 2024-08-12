@@ -1,98 +1,222 @@
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding-top: 100px;
-  background-color: #1d5c83;
-  text-align: center; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f3f6f9, #3187ce);
+  margin: 0;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.form-container {
-  background: rgba(194, 215, 222, 1);
-  border-radius: 16px;
-  display: inline-block;
-  padding: 50px 30px 40px 50px;
-  color: #2298d7;
-  border: 1px solid;
-  text-align: left;
-  box-sizing: border-box;
+#root {
   width: 100%;
-  max-width: 400px;
+}
+
+.form-container {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 60px 40px; /* Increased padding for a larger form */
+  color: #333;
+  border: 1px solid #ddd;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 480px; /* Increased max-width */
+  width: 100%;
 }
 
 .form-container > h1 {
   text-align: center;
-  color: #2298d7;
+  color: #007bff;
+  font-size: 28px; /* Increased font size */
+  margin-bottom: 20px;
 }
 
 input[type=email], input[type=password] {
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #2298d7;
+  padding: 14px 20px; /* Increased padding */
+  margin: 10px 0; /* Increased margin for spacing */
+  border: 2px solid #007bff;
   border-radius: 30px;
-  box-sizing: border-box;
+  font-size: 16px;
 }
 
 .btn-container {
   display: flex;
   justify-content: space-between;
-  margin: 20px 0 ;
+  margin: 20px 0;
 }
 
 .btn-primary {
   border-radius: 30px;
-  background-color: #2298d7;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
   border: none;
-  font-size: 20px;
-  padding: 10px 20px;
+  font-size: 16px;
+  padding: 14px 24px; /* Increased padding */
   margin: 10px 5px;
   cursor: pointer;
   flex: 1;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .btn-primary:hover {
-  opacity: 0.6;
+  background: linear-gradient(135deg, #0056b3, #007bff);
+  transform: scale(1.05);
 }
 
 label {
   margin-left: 5px;
+  color: #333;
 }
 
 .account-link {
   display: block;
   margin: 10px 0 30px;
   font-size: 14px;
-  color: #2298d7;
+  color: #007bff;
   text-decoration: none;
+  transition: color 0.3s;
 }
 
 .account-link:hover {
   text-decoration: underline;
+  color: #0056b3;
 }
 
-.navbar{
-  background-color: #2298d7;
+/* Navbar styles */
+.navbar {
+  background: #007bff;
+  padding: 12px 0;
 }
-.navbar-logout-icon,.navbar-notifi-icon,.navbar-user-icon{
-  margin-right: 30px;
+
+.navbar-logout-icon, .navbar-notifi-icon, .navbar-user-icon {
+  margin-right: 20px;
   cursor: pointer;
-}
-.logo{
-  border-radius:50%;
-  margin-left: 10px;
-  margin-right:10px;
+  color: white;
+  transition: color 0.3s;
 }
 
-.btn {
-display: 'flex';
-justify-Content: 'center';
-align-Items: 'center';
- width: '100%'; 
+.navbar-logout-icon:hover, .navbar-notifi-icon:hover, .navbar-user-icon:hover {
+  color: #e3f2fd;
 }
-.tableContainer{
-  margin: 0;
+
+.logo {
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+/* Tooltip styles */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px;
+  position: absolute;
+  top: 100%; /* Position below the tooltip container */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+/* Current Balance*/
+.card-container {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 15px;
+  border-radius: 8px;
+  background: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.card-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  background-color: #00070e; /* Light blue background on hover */
+}
+
+.card {
+  width: 18rem;
+  border: none; /* Remove default border */
+}
+
+.card-title,
+.card-content,
+.card-subtitle,
+.card-text {
+  transition: color 0.3s ease;
+}
+
+.card-container:hover .card-title,
+.card-container:hover .card-content,
+.card-container:hover .card-subtitle,
+.card-container:hover .card-text {
+  color: #007bff;
+ /* Change text color on hover */
+}
+
+
+/* MyTransactions*/
+.myTransaction {
+  width: 45%;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  margin-left: 15px;
+  
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.status-button {
+  background: #f0f4f8;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border: 2px solid;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  font-size: 14px;
+  font-weight: 600;
+  width: 30%;
+}
+
+.status-button.sent {
+  color: #28a745;
+  border-color: #28a745;
+}
+
+.status-button.sent:hover {
+  background: rgba(40, 167, 69, 0.1);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.2);
+}
+
+.status-button.received {
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.status-button.received:hover {
+  background: rgba(0, 123, 255, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
 }
