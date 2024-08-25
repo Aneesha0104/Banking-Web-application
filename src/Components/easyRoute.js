@@ -9,3 +9,5 @@ export {default as Tooltip} from './tooltip';
 export {default as UserDashboard} from './userDashboard';
 export {default as MyTransaction} from './myTransaction';
 export {default as TransactionPage} from './transactionPage';
+export {default as PayMoney} from './payMoney';
+export {default as SendMoney} from './sendMoney';
